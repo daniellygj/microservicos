@@ -8,7 +8,7 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.gasparbarancelli</groupId>
+    <groupId>com.springcloud</groupId>
     <artifactId>discovery</artifactId>
     <version>1.0</version>
     <name>discovery</name>
@@ -84,14 +84,14 @@
                         <image>openjdk:15-jdk-slim-buster</image>
                     </from>
                     <to>
-                        <image>gasparbarancelli/microservices-discovery:${version}</image>
+                        <image>daniellygj/microservices-discovery:${version}</image>
                     </to>
                     <container>
                         <jvmFlags>
                             <jvmFlag>-Xms128m</jvmFlag>
                             <jvmFlag>-Xmx256m</jvmFlag>
                         </jvmFlags>
-                        <mainClass>com.gasparbarancelli.discovery.DiscoveryApplication</mainClass>
+                        <mainClass>com.springcloud.discovery.DiscoveryApplication</mainClass>
                     </container>
                 </configuration>
             </plugin>

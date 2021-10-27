@@ -1,4 +1,4 @@
-package com.gasparbarancelli.discovery;
+package com.springcloud.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

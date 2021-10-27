@@ -12,6 +12,21 @@ services:
     expose:
       - "8888"
 
+  gateway:
+    container_name: gateway
+    image: daniellygj/microservices-gateway:1.0
+    restart: always
+    environment:
+      CONFIG_SERVER_URL: 'http://config:8888'
+      EUREKA_URL: 'http://discovery:8761/eureka/'
+    ports:
+      - 8080:8080
+    expose:
+      - "8080"
+    depends_on:
+      - config
+      - discovery
+
   discovery:
     container_name: discovery
     image: daniellygj/microservices-discovery:1.0
@@ -35,3 +50,18 @@ services:
     expose:
       - 6161
       - 8161
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    hostname: mysql
+    environment:
+      MYSQL_DATABASE: 'sales'
+      MYSQL_USER: 'sales'
+      MYSQL_PASSWORD: 'sales123'
+      MYSQL_ROOT_PASSWORD: 'sales123'
+    ports:
+      - 3307:3306
+    expose:
+      - "3307"

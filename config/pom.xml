@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.springcloud</groupId>
 	<artifactId>config</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>config</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -59,14 +59,14 @@
 						<image>openjdk:15-jdk-slim-buster</image>
 					</from>
 					<to>
-						<image>gasparbarancelli/microservices-config:${version}</image>
+						<image>daniellygj/microservices-config:${version}</image>
 					</to>
 					<container>
 						<jvmFlags>
 							<jvmFlag>-Xms128m</jvmFlag>
 							<jvmFlag>-Xmx256m</jvmFlag>
 						</jvmFlags>
-						<mainClass>com.gasparbarancelli.config.ConfigApplication</mainClass>
+						<mainClass>com.springcloud.config.ConfigApplication</mainClass>
 					</container>
 				</configuration>
 			</plugin>

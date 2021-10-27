@@ -1,8 +1,11 @@
 package com.springcloud.product.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springcloud.product.model.Product;
 import com.springcloud.product.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +18,12 @@ public class ProductController {
     @Autowired
     private ProductRepository repository;
 
+    @Autowired
+    private JmsTemplate jmsTemplate;
+
+    @Autowired
+    private ObjectMapper mapper;
+
     @GetMapping
     public List<Product> findAll() {
         return repository.findAll();
@@ -26,8 +35,13 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product insert(@RequestBody Product product) {
-        return repository.save(product);
+    public Product insert(@RequestBody Product product) throws JsonProcessingException {
+        Product productSaved = repository.save(product);
+
+        var productJson = mapper.writeValueAsString(productSaved);
+        jmsTemplate.convertAndSend("queue.product.insert", productJson);
+
+        return productSaved;
     }
 
     @DeleteMapping

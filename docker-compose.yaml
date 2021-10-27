@@ -27,6 +27,21 @@ services:
       - config
       - discovery
 
+  product:
+    container_name: product
+    image: daniellygj/microservices-product:1.0
+    restart: always
+    environment:
+      CONFIG_SERVER_URL: 'http://config:8888'
+      EUREKA_URL: 'http://discovery:8761/eureka/'
+      JMS_URL: 'tcp://jms:61616'
+    ports:
+      - 8081:8081
+    depends_on:
+      - config
+      - discovery
+      - jms
+
   discovery:
     container_name: discovery
     image: daniellygj/microservices-discovery:1.0

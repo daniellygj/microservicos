@@ -31,8 +31,8 @@ public class Product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Product produto = (Product) o;
-        return Objects.equals(id, produto.id);
+        Product product = (Product) o;
+        return Objects.equals(id, product.id);
     }
 
     @Override

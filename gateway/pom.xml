@@ -72,7 +72,7 @@
 							<jvmFlag>-Xms128m</jvmFlag>
 							<jvmFlag>-Xmx256m</jvmFlag>
 						</jvmFlags>
-						<mainClass>com.springcloud.gateway.DiscoveryApplication</mainClass>
+						<mainClass>com.springcloud.gateway.GatewayApplication</mainClass>
 					</container>
 				</configuration>
 			</plugin>

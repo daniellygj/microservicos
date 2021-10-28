@@ -112,3 +112,20 @@ services:
       - 6379:6379
     expose:
       - "6379"
+
+  coupons:
+    container_name: coupons
+    image: daniellygj/microservices-coupons:1.0
+    restart: always
+    environment:
+      CONFIG_SERVER_URL: 'http://config:8888'
+      EUREKA_URL: 'http://discovery:8761/eureka/'
+      REDIS_HOST: 'redis'
+    ports:
+      - 8083:8083
+    expose:
+      - "8083"
+    depends_on:
+      - config
+      - discovery
+      - redis

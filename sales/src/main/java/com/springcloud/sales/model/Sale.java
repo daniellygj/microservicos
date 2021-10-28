@@ -1,6 +1,7 @@
 package com.springcloud.sales.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
@@ -12,7 +13,9 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Data
 @Entity
+@Table(name = "SALE")
 public class Sale {
 
     @Id

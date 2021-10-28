@@ -32,6 +32,7 @@ public class SaleItem {
 
     private BigDecimal value;
 
+    @Column(name = "TOTAL_VALUE")
     private BigDecimal totalValue;
 
 

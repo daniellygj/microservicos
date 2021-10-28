@@ -1,19 +1,19 @@
 package com.spingcloud.sales.model;
 
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
+import lombok.*;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-//@NoArgsConstructor
-//@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Table(name = "PRODUCT")
+@Data
 public class Product {
 
     @Id
@@ -24,29 +24,6 @@ public class Product {
     
     private BigDecimal value;
 
-    public Product() {
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    public void setValue(BigDecimal value) {
-        this.value = value;
-    }
-
-    private Product(@NonNull String description, @NonNull BigDecimal value) {
-        setDescription(description);
-        setValue(value);
-    }
 
     @Override
     public boolean equals(Object o) {

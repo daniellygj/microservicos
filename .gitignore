@@ -33,7 +33,7 @@ build/
 .vscode/
 
 ### H2 ###
-/data
+/data/
 
 ### FlyWay ###
 flyway-core/SPOOLEDCONTENTS.SQL

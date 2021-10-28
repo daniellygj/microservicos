@@ -27,11 +27,11 @@ public class CouponController {
     }
 
     @GetMapping("{id}")
-    public Coupon findById(@NonNull @PathVariable("id") String id) {
+    public BigDecimal findById(@NonNull @PathVariable("id") String id) {
         LOGGER.info("Seeking the coupon: id = {}", id);
 
         return repository.findById(id)
-                .orElseThrow(() -> new CouponNotFoundException(id));
+                .orElseThrow(() -> new CouponNotFoundException(id)).getDiscount();
     }
 
     @PostMapping

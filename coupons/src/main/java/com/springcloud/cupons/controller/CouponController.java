@@ -23,6 +23,11 @@ public class CouponController {
         this.repository = repository;
     }
 
+    @GetMapping
+    public Iterable<Coupon> findAll() {
+        return repository.findAll();
+    }
+
     @GetMapping("{id}")
     public Coupon findById(@NonNull @PathVariable("id") String id) {
         LOGGER.info("Seeking the coupon: id = {}", id);

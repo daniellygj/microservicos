@@ -81,6 +81,28 @@ services:
     expose:
       - "3307"
 
+  sales:
+    container_name: sales
+    image: daniellygj/microservices-sales:1.0
+    restart: always
+    environment:
+      CONFIG_SERVER_URL: 'http://config:8888'
+      EUREKA_URL: 'http://discovery:8761/eureka/'
+      JMS_URL: 'tcp://jms:61616'
+      MYSQL_HOST: 'mysql'
+      MYSQL_PORT: '3306'
+      MYSQL_USERNAME: 'sales'
+      MYSQL_PASSWORD: 'sales123'
+    ports:
+      - 8082:8082
+    expose:
+      - "8082"
+    depends_on:
+      - mysql
+      - config
+      - discovery
+      - jms
+
   redis:
     container_name: redis
     image: redis

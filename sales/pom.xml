@@ -85,6 +85,27 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>2.6.0</version>
+				<configuration>
+					<from>
+						<image>openjdk:15-jdk-slim-buster</image>
+					</from>
+					<to>
+						<image>daniellygj/microservices-sales:${version}</image>
+					</to>
+					<container>
+						<jvmFlags>
+							<jvmFlag>-Xms256m</jvmFlag>
+							<jvmFlag>-Xmx512m</jvmFlag>
+						</jvmFlags>
+						<mainClass>com.springcloud.sales.SalesApplication</mainClass>
+					</container>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

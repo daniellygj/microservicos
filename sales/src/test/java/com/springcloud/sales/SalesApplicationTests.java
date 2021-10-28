@@ -1,4 +1,4 @@
-package com.spingcloud.sales;
+package com.springcloud.sales;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

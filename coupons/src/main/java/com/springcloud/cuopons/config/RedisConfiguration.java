@@ -1,4 +1,4 @@
-package com.springcloud.cupons.config;
+package com.springcloud.cuopons.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,6 @@
-package com.springcloud.cupons.repository;
+package com.springcloud.cuopons.repository;
 
-import com.springcloud.cupons.model.Coupon;
+import com.springcloud.cuopons.model.Coupon;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CouponRepository extends CrudRepository<Coupon, String> {

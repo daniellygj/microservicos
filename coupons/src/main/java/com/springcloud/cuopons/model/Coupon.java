@@ -1,4 +1,4 @@
-package com.springcloud.cupons.model;
+package com.springcloud.cuopons.model;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.data.annotation.Id;

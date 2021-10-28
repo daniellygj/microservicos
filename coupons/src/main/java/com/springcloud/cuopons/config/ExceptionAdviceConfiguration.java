@@ -1,6 +1,6 @@
-package com.springcloud.cupons.config;
+package com.springcloud.cuopons.config;
 
-import com.springcloud.cupons.exception.CouponNotFoundException;
+import com.springcloud.cuopons.exception.CouponNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

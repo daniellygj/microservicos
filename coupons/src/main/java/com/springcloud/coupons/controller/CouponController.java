@@ -1,8 +1,8 @@
-package com.springcloud.cuopons.controller;
+package com.springcloud.coupons.controller;
 
-import com.springcloud.cuopons.exception.CouponNotFoundException;
-import com.springcloud.cuopons.model.Coupon;
-import com.springcloud.cuopons.repository.CouponRepository;
+import com.springcloud.coupons.exception.CouponNotFoundException;
+import com.springcloud.coupons.model.Coupon;
+import com.springcloud.coupons.repository.CouponRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

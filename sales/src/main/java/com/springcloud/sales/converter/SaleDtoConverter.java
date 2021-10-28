@@ -31,7 +31,7 @@ public class SaleDtoConverter {
         Set<SaleItem> saleItems =  ToSaleItem(saleDTO);
         BigDecimal discount = getDesconto(saleDTO);
 
-//        todo - comunicacao com o servico de cuopons para aplicar o desconto
+//        todo - comunicacao com o servico de coupons para aplicar o desconto
         return new Sale(saleItems, discount, saleDTO.getEmail());
     }
 

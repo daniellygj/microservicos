@@ -1,4 +1,4 @@
-package com.springcloud.cuopons.exception;
+package com.springcloud.coupons.exception;
 
 public class CouponNotFoundException extends RuntimeException {
 

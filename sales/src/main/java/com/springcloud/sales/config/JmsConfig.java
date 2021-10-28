@@ -1,4 +1,4 @@
-package com.spingcloud.sales.config;
+package com.springcloud.sales.config;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;

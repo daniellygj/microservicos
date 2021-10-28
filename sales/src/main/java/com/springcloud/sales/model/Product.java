@@ -1,7 +1,6 @@
-package com.spingcloud.sales.model;
+package com.springcloud.sales.model;
 
 import lombok.*;
-import org.checkerframework.checker.nullness.qual.NonNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

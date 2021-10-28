@@ -1,9 +1,9 @@
-package com.spingcloud.sales.listener;
+package com.springcloud.sales.listener;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spingcloud.sales.model.Product;
-import com.spingcloud.sales.repository.ProductRepository;
+import com.springcloud.sales.model.Product;
+import com.springcloud.sales.repository.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.annotation.JmsListener;

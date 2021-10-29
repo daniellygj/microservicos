@@ -142,6 +142,7 @@ services:
       - config
       - discovery
       - redis
+      - prometheus
 
   prometheus:
     image: prom/prometheus:latest
@@ -206,3 +207,47 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+
+  postgres:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+
+  keycloak:
+    image: jboss/keycloak:11.0.0
+    container_name: keycloak
+    restart: on-failure
+    volumes:
+      - ./realm-export.json:/tmp/keycloak/config/realm-export.json
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_SCHEMA: public
+      DB_PASSWORD: password
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_IMPORT: /tmp/keycloak/config/realm-export.json
+    command:
+      - "-b"
+      - "0.0.0.0"
+      - "-Djboss.socket.binding.port-offset=10000"
+    expose:
+      - 18080
+    ports:
+      - 18080:18080
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+    driver: local

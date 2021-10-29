@@ -113,6 +113,7 @@ services:
       - config
       - discovery
       - jms
+      - prometheus
 
   redis:
     container_name: redis

@@ -45,6 +45,7 @@ services:
       EUREKA_URL: 'http://discovery:8761/eureka/'
       JMS_URL: 'tcp://jms:61616'
       ZIPKIN_URL: 'http://trace:9411/'
+      KEYCLOAK_HOST: 'keycloak'
     ports:
       - 8081:8081
     depends_on:

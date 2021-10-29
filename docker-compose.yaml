@@ -69,6 +69,8 @@ services:
     container_name: jms
     image: rmohr/activemq
     restart: always
+    volumes:
+      - jms_volume:/var/lib/jms/data
     ports:
       - 6161:61616
       - 8161:8161
@@ -81,6 +83,8 @@ services:
     image: mysql:5.7
     restart: always
     hostname: mysql
+    volumes:
+      - mysql_volume:/var/lib/mysql/data
     environment:
       MYSQL_DATABASE: 'sales'
       MYSQL_USER: 'sales'
@@ -250,4 +254,8 @@ services:
 
 volumes:
   postgres_data:
+    driver: local
+  jms_volume:
+    driver: local
+  mysql_volume:
     driver: local

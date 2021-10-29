@@ -98,6 +98,15 @@
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 
+		<dependency> <!-- Gera endpoint com estatisticas-->
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+
+		<dependency> <!-- diz se a aplicação esta on ou não (health check)-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

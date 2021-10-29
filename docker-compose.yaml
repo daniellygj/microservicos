@@ -84,7 +84,7 @@ services:
     restart: always
     hostname: mysql
     volumes:
-      - mysql_volume:/var/lib/mysql/data
+      - ./mysql-data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: 'sales'
       MYSQL_USER: 'sales'
@@ -256,6 +256,4 @@ volumes:
   postgres_data:
     driver: local
   jms_volume:
-    driver: local
-  mysql_volume:
     driver: local
